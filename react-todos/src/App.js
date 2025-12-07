@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import './App.css';
 import TodoTable from './components/TodoTable';
+import NewTodoForm from './components/NewTodoForm';
 
 function App() {
 
@@ -13,12 +14,19 @@ function App() {
     ]
   )
 
-  const addTodo = () => {
+  const deleteTodo = () => {
+    if(todos.length > 0) {
+      todos.pop()
+      setTodos(todos => [...todos])
+    }
+  }
+
+  const addTodo = (description, assigned) => {
     if(todos.length > 0) {
       const newTodo = {
         rowNumber: todos.length + 1,
-        rowDescription: "Wubba Lubba dub dub",
-        rowAssigned: "Rick Sanchez"
+        rowDescription: description,
+        rowAssigned: assigned
       }
 
       setTodos(todos => [...todos, newTodo])
@@ -33,9 +41,8 @@ function App() {
         </div>
         <div className='card-body'>
           <TodoTable todos={todos} />
-          <button className='btn btn-primary' onClick={addTodo}>
-            Add Todo
-          </button>
+          <button type='button' className='btn btn-danger mt-3' onClick={deleteTodo}>Delete</button>
+          <NewTodoForm addTodo={addTodo} />
         </div>
       </div>
     </div>
