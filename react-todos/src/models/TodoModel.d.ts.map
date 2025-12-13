@@ -1,0 +1,1 @@
+{"version":3,"file":"TodoModel.d.ts","sourceRoot":"","sources":["TodoModel.ts"],"names":[],"mappings":"AAAA,qBAAa,SAAS;IAElB,SAAS,EAAE,MAAM,CAAC;IAClB,cAAc,EAAE,MAAM,CAAC;IACvB,WAAW,EAAE,MAAM,CAAC;gBAGhB,SAAS,EAAE,MAAM,EACjB,cAAc,EAAE,MAAM,EACtB,WAAW,EAAE,MAAM;CAO1B"}
